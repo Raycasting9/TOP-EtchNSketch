@@ -2,6 +2,7 @@
 const gridBox = document.querySelector('.grid');
 const defaultgrid = 16;
 const gridItems = document.querySelectorAll('.grid-item');
+let randomColorMode = false;
 
 //Process
 createGrid(defaultgrid);
@@ -10,7 +11,12 @@ createGrid(defaultgrid);
 
 gridBox.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("grid-item")) {
-        event.target.style.backgroundColor = "black";
+        if(randomColorMode){
+            event.target.style.backgroundColor = getRandomColor();
+        } else {
+            event.target.style.backgroundColor = "black";
+        }
+        
     }
 });
 
@@ -51,4 +57,14 @@ function changeFlex(value){
     document.querySelectorAll(".grid-item").forEach(item => {
         item.style.flex = newFlex;
     });
+}
+
+//Toggle random color mode 
+function toggleRandomColor() {
+    randomColorMode = !randomColorMode;
+}
+
+// Generate random color
+function getRandomColor() {
+    return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
 }
