@@ -52,3 +52,8 @@ body {
     border: 1px solid gray;
     background-color: lightgrey;
 }
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
