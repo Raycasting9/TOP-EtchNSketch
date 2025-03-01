@@ -48,7 +48,6 @@ body {
 }
 
 .grid-item {
-    flex: 1 1 calc((100% / 16));
     aspect-ratio: 1/1;
     border: 1px solid gray;
     background-color: lightgrey;
